@@ -1,4 +1,4 @@
-const WashJob = require('../models/washJob');
+const WashJob = require('../models/washJobModel'); 
 
 // ฟังก์ชันดึงข้อมูลสรุปของคำสั่งซักทั้งหมด
 const getDashboardData = async (req, res) => {

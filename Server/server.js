@@ -13,12 +13,15 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 // เชื่อมต่อกับ MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/rd-wash-system', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.log('Error connecting to MongoDB:', err));
+if (!process.env.MONGODB_URI) {
+  console.error("❌ Missing MongoDB connection string");
+  process.exit(1);
+}
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch((err) => console.error('❌ MongoDB error:', err));
+
 
 // นำเข้า Routes
 const employeeRoutes = require('./routes/employeeRoutes');
