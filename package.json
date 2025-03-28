@@ -116,11 +116,10 @@
     "whatwg-url": "^14.2.0"
   },
   "devDependencies": {},
-"scripts": {
-  "start": "node Server/server.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
-}
-,
+  "scripts": {
+    "start": "node Server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
