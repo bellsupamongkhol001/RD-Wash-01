@@ -1,0 +1,44 @@
+<div class="employee-page">
+    <div class="employee-header">
+      <h2>Employee Management</h2>
+      <div class="employee-actions">
+        <input type="text" id="searchEmployee" placeholder="Search by ID or Name">
+        <button id="addEmployeeBtn">+ Add Employee</button>
+      </div>
+    </div>
+  
+    <div id="employeeCards" class="employee-cards">
+      <!-- Cards will be loaded dynamically -->
+    </div>
+  
+    <!-- Modal Form -->
+    <div class="modal" id="employeeModal">
+      <div class="modal-content">
+        <span class="close" id="closeEmployeeModal">&times;</span>
+        <h3 id="modalEmployeeTitle">Add Employee</h3>
+        <form id="employeeForm">
+          <input type="hidden" id="employeeObjectId">
+  
+          <label>Employee ID</label>
+          <input type="text" id="employeeId" required>
+  
+          <label>Name</label>
+          <input type="text" id="employeeName" required>
+  
+          <label>Department</label>
+          <input type="text" id="department" required>
+  
+          <label>Profile Picture</label>
+          <input type="file" id="employeeImage" accept="image/*">
+  
+          <img id="previewImage" src="#" style="display:none; max-width: 100px; margin-top: 10px;">
+  
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/employee.css">
+  <script type="module" src="/RD-Wash-01/Client/assets/js/employee.js"></script>
+  

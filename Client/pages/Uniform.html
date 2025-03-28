@@ -1,0 +1,47 @@
+<div class="uniform-page">
+    <div class="uniform-header">
+      <h2>Uniform Management</h2>
+      <div class="uniform-actions">
+        <input type="text" id="searchUniform" placeholder="Search by Code / Size / Color">
+        <button id="addUniformBtn">+ Add Uniform</button>
+      </div>
+    </div>
+  
+    <div id="uniformCards" class="uniform-cards">
+      <!-- Cards will load here -->
+    </div>
+  
+    <!-- Modal Form -->
+    <div class="modal" id="uniformModal">
+      <div class="modal-content">
+        <span class="close" id="closeUniformModal">&times;</span>
+        <h3 id="modalUniformTitle">Add Uniform</h3>
+        <form id="uniformForm">
+          <input type="hidden" id="uniformObjectId">
+  
+          <label>Uniform Code</label>
+          <input type="text" id="uniformCode" required>
+  
+          <label>Size</label>
+          <input type="text" id="uniformSize" required>
+  
+          <label>Color</label>
+          <input type="text" id="uniformColor" required>
+  
+          <label>Quantity</label>
+          <input type="number" id="uniformQty" required min="0">
+  
+          <label>Image</label>
+          <input type="file" id="uniformImage" accept="image/*">
+  
+          <img id="previewUniformImage" style="display:none; max-width: 100px; margin-top: 10px;">
+  
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/uniform.css">
+  <script type="module" src="/RD-Wash-01/Client/assets/js/uniform.js"></script>
+  

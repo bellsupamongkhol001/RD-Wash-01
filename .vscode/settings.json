@@ -1,0 +1,16 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.vscode": false
+    },
+    "prettier.singleQuote": true,
+    "prettier.semi": true,
+    "prettier.trailingComma": "none",
+    "prettier.printWidth": 100,
+    "prettier.tabWidth": 2
+  }
+  

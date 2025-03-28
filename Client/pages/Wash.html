@@ -1,0 +1,78 @@
+<div class="wash-page">
+  <div class="wash-header">
+    <h2>Wash Management</h2>
+    <div class="wash-actions">
+      <input type="text" id="searchWash" placeholder="Search by Wash Code / Employee">
+      <button id="addWashBtn">+ Add Wash</button>
+    </div>
+  </div>
+
+  <div id="washTableContainer">
+    <table class="wash-table">
+      <thead>
+        <tr>
+          <th>Wash Code</th>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Uniform Code</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Qty</th>
+          <th>Status</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="washTableBody">
+        <!-- rows will be injected dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal Form -->
+  <div class="modal" id="washModal">
+    <div class="modal-content">
+      <span class="close" id="closeWashModal">&times;</span>
+      <h3 id="modalWashTitle">Add Wash Job</h3>
+      <form id="washForm">
+        <input type="hidden" id="washObjectId">
+
+        <label>Wash Code</label>
+        <input type="text" id="washCode" required>
+
+        <label>Employee</label>
+        <select id="employeeId" required></select>
+
+        <label>Uniform Code</label>
+        <select id="uniformCode" required></select>
+
+        <label>Uniform Size</label>
+        <input type="text" id="uniformSize" required>
+
+        <label>Uniform Color</label>
+        <input type="text" id="uniformColor" required>
+
+        <label>Quantity</label>
+        <input type="number" id="uniformQty" min="1" required>
+
+        <label>Status</label>
+        <select id="status" required>
+          <option value="In Washing">In Washing</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <label>Start Date</label>
+        <input type="datetime-local" id="startDate" required>
+
+        <label>End Date</label>
+        <input type="datetime-local" id="endDate">
+
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/wash.css">
+<script type="module" src="/RD-Wash-01/Client/assets/js/wash.js"></script>
