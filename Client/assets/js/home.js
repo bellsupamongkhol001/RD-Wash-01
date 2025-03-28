@@ -1,33 +1,84 @@
+// 📌 config
+const baseURL = "https://rd-wash.onrender.com/api";
+
 // ฟังก์ชัน logout
 function logout() {
-  localStorage.clear(); // ลบข้อมูลทั้งหมดจาก localStorage
-  window.location.href = 'login.html'; // Redirect ไปหน้า Login
+  localStorage.clear();
+  window.location.href = 'login.html';
 }
 
-// ฟังก์ชันโหลดหน้า HTML
+// ฟังก์ชันโหลดหน้า HTML จากโฟลเดอร์ /pages/
 function loadPage(pageName) {
   const contentEl = document.getElementById('main-panel-content');
 
-  // แสดงแถบโหลดระหว่าง fetch
+  // แสดงแถบโหลด
   contentEl.innerHTML = `
     <h2>กำลังโหลด ${pageName}...</h2>
     <div class="loading-bar"><div class="bar"></div></div>
   `;
 
-  fetch(`pages/${pageName}.html`)  // ตรวจสอบให้แน่ใจว่าโฟลเดอร์ `pages` มีไฟล์นั้น
-    .then((response) => {
-      if (!response.ok) throw new Error('ไม่สามารถโหลดหน้าได้');
-      return response.text();
+  fetch(`pages/${pageName}.html`)
+    .then((res) => {
+      if (!res.ok) throw new Error('ไม่สามารถโหลดหน้าได้');
+      return res.text();
     })
     .then((html) => {
       contentEl.innerHTML = html;
+      runPageScript(pageName); // 👈 โหลดสคริปต์เพิ่มเติม (เรียก API)
     })
     .catch((err) => {
-      contentEl.innerHTML = `<h2 style="color:red;">เกิดข้อผิดพลาดในการโหลดหน้า ${pageName}</h2><p>${err.message}</p>`;
+      contentEl.innerHTML = `<h2 style="color:red;">❌ เกิดข้อผิดพลาดในการโหลดหน้า ${pageName}</h2><p>${err.message}</p>`;
     });
 }
 
-// สลับเมนู (เผื่อใช้กับ responsive)
+// เรียกใช้หลังโหลด HTML เสร็จ เพื่อเชื่อม API แต่ละหน้า
+function runPageScript(pageName) {
+  switch (pageName) {
+    case 'Employee':
+      fetch(`${baseURL}/employee`)
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById('employee-list');
+          if (!list) return;
+
+          list.innerHTML = '';
+          if (data.length === 0) {
+            list.innerHTML = '<li>ไม่พบข้อมูลพนักงาน</li>';
+            return;
+          }
+
+          data.forEach(emp => {
+            const li = document.createElement('li');
+            li.textContent = `${emp.employeeId} - ${emp.employeeName} (${emp.department})`;
+            list.appendChild(li);
+          });
+        })
+        .catch(err => {
+          console.error('โหลดข้อมูลพนักงานล้มเหลว:', err);
+          const list = document.getElementById('employee-list');
+          if (list) {
+            list.innerHTML = `<li style="color:red;">เกิดข้อผิดพลาดในการโหลดข้อมูล</li>`;
+          }
+        });
+      break;
+
+    // เพิ่มหน้าอื่น เช่น Uniform, Wash ต่อได้เลย
+  }
+}
+
+// toggle dropdown ผู้ใช้
+function toggleUserDropdown() {
+  document.querySelector('.user-info')?.classList.toggle('show-dropdown');
+}
+
+// ซ่อน dropdown เมื่อคลิกนอก
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.user-info')) {
+    document.querySelector('.user-info')?.classList.remove('show-dropdown');
+  }
+});
+
+// toggle เมนู (สำหรับ mobile)
 function toggleMenu() {
   document.querySelector('.sidebar')?.classList.toggle('active');
 }
@@ -36,37 +87,22 @@ function toggleMenu() {
 function updateDateTime() {
   const now = new Date();
   const el = document.getElementById('datetime');
-  if (el) {
-      el.innerText = now.toLocaleString('th-TH', { hour12: false });
-  }
+  if (el) el.innerText = now.toLocaleString('th-TH', { hour12: false });
 }
 
-// จำลองสถานะฐานข้อมูล (สุ่ม 95% เชื่อมต่อ)
+// จำลองสถานะการเชื่อมต่อฐานข้อมูล
 function checkConnection() {
   const el = document.getElementById('connection-status');
   if (!el) return;
-
   const isConnected = Math.random() > 0.05;
   el.innerHTML = isConnected
-      ? '<span class="status-dot green"></span> เชื่อมต่อฐานข้อมูล'
-      : '<span class="status-dot red"></span> ขาดการเชื่อมต่อ';
+    ? '<span class="status-dot green"></span> เชื่อมต่อฐานข้อมูล'
+    : '<span class="status-dot red"></span> ขาดการเชื่อมต่อ';
 }
 
-// toggle dropdown ผู้ใช้
-function toggleUserDropdown() {
-  document.querySelector('.user-info')?.classList.toggle('show-dropdown');
-}
-
-// ซ่อน dropdown ถ้าคลิกนอก
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.user-info')) {
-      document.querySelector('.user-info')?.classList.remove('show-dropdown');
-  }
-});
-
-// เริ่มทำงาน
+// เริ่มต้นระบบ
 setInterval(updateDateTime, 1000);
 setInterval(checkConnection, 5000);
 updateDateTime();
 checkConnection();
-loadPage('Dashboard'); // โหลดหน้าแรก
+loadPage('Dashboard'); // เปิดหน้าแรก

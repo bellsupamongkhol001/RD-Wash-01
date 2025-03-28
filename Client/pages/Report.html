@@ -1,40 +1,46 @@
 <div class="report-page">
-    <div class="report-header">
-      <h2>Wash Report</h2>
-      <div class="report-filters">
-        <label>Start:</label>
-        <input type="date" id="startDate">
-        <label>End:</label>
-        <input type="date" id="endDate">
-        <button id="filterBtn">Filter</button>
-        <button id="exportCsvBtn">Export CSV</button>
-        <button id="exportPdfBtn">Export PDF</button>
-      </div>
-    </div>
-  
-    <div class="report-table">
-      <table id="reportTable">
-        <thead>
-          <tr>
-            <th>Wash Code</th>
-            <th>Employee</th>
-            <th>Uniform</th>
-            <th>Size</th>
-            <th>Color</th>
-            <th>Qty</th>
-            <th>Status</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Data will be rendered here -->
-        </tbody>
-      </table>
+  <div class="report-header">
+    <h2>Wash Report</h2>
+    <div class="report-filters">
+      <label>Start:</label>
+      <input type="date" id="startDate">
+      <label>End:</label>
+      <input type="date" id="endDate">
+      <button id="filterBtn">Filter</button>
+      <button id="exportCsvBtn">Export CSV</button>
+      <button id="exportPdfBtn">Export PDF</button>
     </div>
   </div>
-  
-  <link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/report.css">
-  <script type="module" src="/RD-Wash-01/Client/assets/js/report.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+  <div class="report-table">
+    <table id="reportTable">
+      <thead>
+        <tr>
+          <th>Wash Code</th>
+          <th>Employee</th>
+          <th>Uniform</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Qty</th>
+          <th>Status</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be rendered here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/report.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('filterBtn').addEventListener('click', loadReport);
+    document.getElementById('exportCsvBtn').addEventListener('click', exportCSV);
+    document.getElementById('exportPdfBtn').addEventListener('click', exportPDF);
+    loadReport();
+  });

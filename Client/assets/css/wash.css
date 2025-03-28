@@ -2,11 +2,11 @@
 
 .wash-page {
   font-family: 'Segoe UI', 'Noto Sans Thai', 'Roboto', sans-serif;
-  background-color: #f4f7fa; /* สีฟ้าอ่อน */
+  background-color: #f4f7fa;
   color: #2d2d2d;
   min-height: 100vh;
-  padding: 5rem; /* เพิ่ม padding เพื่อไม่ให้เนื้อหาชิดขอบ */
-  padding-bottom: 80px; /* เพิ่มระยะระหว่าง footer */
+  padding: 5rem;
+  padding-bottom: 80px;
 }
 
 .wash-header {
@@ -14,13 +14,13 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 1rem 1rem; /* เพิ่มระยะห่างระหว่าง header กับเนื้อหา */
+  margin: 1rem 1rem;
 }
 
 .wash-header h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #2e3a59; /* สีฟ้าหม่น */
+  color: #2e3a59;
   margin: 0;
 }
 
@@ -47,7 +47,7 @@
 }
 
 #addWashBtn {
-  background-color: #3a6ea5; /* สีน้ำเงินมาตรฐาน */
+  background-color: #3a6ea5;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -62,16 +62,15 @@
 }
 
 #addWashBtn::before {
-  content: '+'; 
+  content: '+';
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 #addWashBtn:hover {
-  background-color: #2c5985; /* ฟ้าลึกกว่าเมื่อ hover */
+  background-color: #2c5985;
 }
 
-/* ========== Table Styling ========== */
 .wash-table {
   width: 100%;
   border-collapse: separate;
@@ -82,11 +81,11 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   font-size: 0.8rem;
   border: 1px solid #ccc;
-  margin: 1.5rem 0 0.5rem; /* เพิ่มระยะห่างระหว่าง table กับส่วนอื่น */
+  margin: 1.5rem 0 0.5rem;
 }
 
 .wash-table thead {
-  background-color: #3a6ea5; /* สีฟ้า */
+  background-color: #3a6ea5;
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -116,7 +115,6 @@
   background-color: #eaf0f4;
 }
 
-/* ========== Status Badge ========== */
 .status {
   padding: 6px 14px;
   border-radius: 16px;
@@ -128,27 +126,26 @@
 }
 
 .status.waiting-send-wash {
-  background-color: #ffb74d; /* สีส้ม */
+  background-color: #ffb74d;
 }
 
 .status.washing {
-  background-color: #4fc3f7; /* ฟ้าอ่อน */
+  background-color: #4fc3f7;
 }
 
 .status.completed {
-  background-color: #81c784; /* สีเขียว */
+  background-color: #81c784;
 }
 
-/* ========== Modal ========== */
 .modal {
-  display: none; /* ซ่อนไว้เมื่อไม่ได้เปิด */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* ให้ modal อยู่ด้านบนสุด */
+  z-index: 1000;
 }
 
 .modal-content {
@@ -202,7 +199,7 @@
   margin-top: 24px;
   width: 100%;
   padding: 12px;
-  background-color: #3a6ea5; /* ฟ้าสด */
+  background-color: #3a6ea5;
   color: white;
   border: none;
   border-radius: 10px;
@@ -213,7 +210,7 @@
 }
 
 .modal-content button[type="submit"]:hover {
-  background-color: #2c5985; /* ฟ้าลึก */
+  background-color: #2c5985;
 }
 
 .close {
@@ -229,7 +226,6 @@
   color: #555;
 }
 
-/* ========== Confirm Delete Buttons ========== */
 .modal-content .actions {
   display: flex;
   justify-content: flex-end;
@@ -238,7 +234,7 @@
 }
 
 .modal-content .danger {
-  background-color: #ef5350; /* สีแดง */
+  background-color: #ef5350;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -248,5 +244,5 @@
 }
 
 .modal-content .danger:hover {
-  background-color: #d32f2f; /* สีแดงเข้ม */
+  background-color: #d32f2f;
 }

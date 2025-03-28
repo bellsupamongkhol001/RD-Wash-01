@@ -1,170 +1,169 @@
 /* ----------- Sidebar ----------- */
 .sidebar {
-    width: 240px;
-    background: linear-gradient(180deg, #3a6ea5, #2f4f6f);
-    color: white;
-    padding: 1rem;
-  }
-  
-  .sidebar .logo h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin-bottom: 1rem;
-    padding: 0.8rem;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.1rem;
-    transition: background 0.3s, transform 0.2s;
-  }
-  
-  .sidebar ul li:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
-  }
-  
-  .sidebar ul li i {
-    width: 24px;
-    text-align: center;
-    font-size: 1.3rem;
-  }
-  
-  /* ----------- Main Panel ----------- */
-  .main-panel {
-    flex: 1;
-    background-color: #f4f7fa;
-    display: flex;
-    flex-direction: column;
-    
-  }
-  
-  .panel-header {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .panel-title {
-    font-weight: bold;
-    color: #2f4f6f;
-    font-size: 1.1rem;
-  }
-  
-  .panel-right {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    font-size: 0.9rem;
-  }
-  
-  .panel-right span#datetime {
-    color: #3a6ea5;
-    font-weight: bold;
-  }
-  
-  .connection-status {
-    display: flex;
-    align-items: center;
-  }
-  
-  .status-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 5px;
-  }
-  .status-dot.green {
-    background-color: #4caf50;
-  }
-  .status-dot.red {
-    background-color: #f44336;
-  }
-  
-  /* ----------- User Info ----------- */
-  .user-info {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f0f4f7;
-    padding: 5px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-  }
-  .user-info:hover {
-    background-color: #e0e7ee;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  }
-  .user-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #3a6ea5;
-  }
-  .user-dropdown {
-    display: none;
-    position: absolute;
-    top: 45px;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    width: 150px;
-    z-index: 100;
-  }
-  .user-dropdown a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  .user-dropdown a:hover {
-    background-color: #f0f0f0;
-  }
-  .user-info.show-dropdown .user-dropdown {
-    display: block;
-  }
-  
-  /* ----------- Main Content ----------- */
-  #main-panel-content {
-    flex: 1;
-    padding: 0.5rem;
-    overflow-y: auto;
-  }
-  
-  /* ----------- Optional: Loading Bar ----------- */
-  .loading-bar {
-    background-color: #e0e0e0;
-    border-radius: 20px;
-    height: 8px;
+  width: 240px;
+  background: linear-gradient(180deg, #3a6ea5, #2f4f6f);
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar .logo h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.sidebar ul li i {
+  width: 24px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+/* ----------- Main Panel ----------- */
+.main-panel {
+  flex: 1;
+  background-color: #f4f7fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #ddd;
+}
+
+.panel-title {
+  font-weight: bold;
+  color: #2f4f6f;
+  font-size: 1.1rem;
+}
+
+.panel-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.panel-right span#datetime {
+  color: #3a6ea5;
+  font-weight: bold;
+}
+
+/* ----------- Connection Indicator ----------- */
+.connection-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.status-dot.green {
+  background-color: #4caf50;
+}
+.status-dot.red {
+  background-color: #f44336;
+}
+
+/* ----------- User Info ----------- */
+.user-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f4f7;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.user-info:hover {
+  background-color: #e0e7ee;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #3a6ea5;
+}
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  width: 150px;
+  z-index: 100;
+}
+.user-dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+.user-dropdown a:hover {
+  background-color: #f0f0f0;
+}
+.user-info.show-dropdown .user-dropdown {
+  display: block;
+}
+
+/* ----------- Main Content ----------- */
+#main-panel-content {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+}
+
+/* ----------- Loading Bar ----------- */
+.loading-bar {
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  height: 8px;
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.loading-bar .bar {
+  height: 100%;
+  width: 0;
+  background-color: #3a6ea5;
+  animation: load 1s ease-out forwards;
+}
+@keyframes load {
+  to {
     width: 100%;
-    margin-top: 20px;
-    overflow: hidden;
   }
-  .loading-bar .bar {
-    height: 100%;
-    width: 0;
-    background-color: #3a6ea5;
-    animation: load 1s ease-out forwards;
-  }
-  @keyframes load {
-    to {
-      width: 100%;
-    }
-  }
-  
+}
