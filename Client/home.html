@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RD Wash System - Home</title>
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/home.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>RD Wash</h1>
+      </div>
+      <ul>
+        <li onclick="loadPage('Dashboard')"><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+        <li onclick="loadPage('Wash')"><i class="fas fa-shirt"></i> Wash</li>
+        <li onclick="loadPage('Employee')"><i class="fas fa-users"></i> Employee</li>
+        <li onclick="loadPage('Uniform')"><i class="fas fa-shirt"></i> Uniform</li>
+        <li onclick="loadPage('Inventory')"><i class="fas fa-boxes"></i> Inventory</li>
+        <li onclick="loadPage('Report')"><i class="fas fa-file-alt"></i> Report</li>
+      </ul>
+    </aside>
+
+    <!-- Main Panel -->
+    <section class="main-panel">
+      <div class="panel-header">
+        <div class="panel-title">RD Wash System</div>
+        <div class="panel-right">
+          <span id="datetime"></span>
+          <div class="user-info" onclick="toggleUserDropdown()">
+            <img src="https://i.pravatar.cc/40?img=3" alt="User" class="user-avatar">
+            <span>สุดหล่อ</span>
+            <div class="user-dropdown" id="user-dropdown">
+              <a href="#" class="logout-btn">ออกจากระบบ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Content -->
+      <div id="main-panel-content">
+        <h2>ยินดีต้อนรับเข้าสู่ระบบ RD Wash System</h2>
+        <p>กรุณาเลือกเมนูจากด้านซ้ายเพื่อเริ่มต้นใช้งาน</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 RD Wash System. All rights reserved.
+  </footer>
+
+  <script src="/RD-Wash-01/Client/assets/js/home.js"></script>
+</body>
+</html>

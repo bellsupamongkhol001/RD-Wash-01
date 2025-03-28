@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "formulahendry.auto-rename-tag",
+      "ecmel.vscode-html-css",
+      "rangav.vscode-thunder-client",
+      "mongodb.mongodb-vscode",
+      "christian-kohler.path-intellisense",
+      "ritwickdey.LiveServer"
+    ]
+  }
+  

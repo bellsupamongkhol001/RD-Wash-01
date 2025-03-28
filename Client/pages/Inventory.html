@@ -1,0 +1,57 @@
+<div class="inventory-page">
+    <div class="inventory-header">
+      <h2>Inventory / Stock Management</h2>
+      <div class="inventory-actions">
+        <input type="text" id="searchStock" placeholder="Search by Code / Size / Color">
+        <button id="addStockBtn">+ Add Stock</button>
+      </div>
+    </div>
+  
+    <div class="inventory-summary">
+      <div class="summary-card total">
+        <h3>Total Items</h3>
+        <p id="totalItems">0</p>
+      </div>
+      <div class="summary-card quantity">
+        <h3>Total Quantity</h3>
+        <p id="totalQuantity">0</p>
+      </div>
+      <div class="summary-card low-stock">
+        <h3>Low Stock</h3>
+        <p id="lowStockCount">0</p>
+      </div>
+    </div>
+  
+    <div id="inventoryCards" class="inventory-cards">
+      <!-- Stock Cards will be injected here -->
+    </div>
+  
+    <!-- Modal Form -->
+    <div class="modal" id="stockModal">
+      <div class="modal-content">
+        <span class="close" id="closeStockModal">&times;</span>
+        <h3 id="modalStockTitle">Add / Update Stock</h3>
+        <form id="stockForm">
+          <input type="hidden" id="stockObjectId">
+  
+          <label>Uniform Code</label>
+          <input type="text" id="stockCode" required>
+  
+          <label>Size</label>
+          <input type="text" id="stockSize" required>
+  
+          <label>Color</label>
+          <input type="text" id="stockColor" required>
+  
+          <label>Quantity</label>
+          <input type="number" id="stockQty" min="0" required>
+  
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/inventory.css">
+  <script type="module" src="/RD-Wash-01/Client/assets/js/inventory.js"></script>
+  

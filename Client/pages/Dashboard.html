@@ -1,0 +1,27 @@
+<div class="dashboard-page">
+    <h2>Dashboard</h2>
+    <div class="dashboard-cards">
+      <div class="dashboard-card">
+        <h4>Total Wash Jobs</h4>
+        <p id="totalWash">0</p>
+      </div>
+      <div class="dashboard-card">
+        <h4>In Washing</h4>
+        <p id="inWashingCount">0</p>
+      </div>
+      <div class="dashboard-card">
+        <h4>Completed</h4>
+        <p id="completedCount">0</p>
+      </div>
+    </div>
+  
+    <div class="dashboard-charts">
+      <canvas id="washStatusChart" height="120"></canvas>
+      <canvas id="washByDeptChart" height="120"></canvas>
+    </div>
+  </div>
+  
+  <link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="/RD-Wash-01/Client/assets/js/dashboard.js"></script>
+  

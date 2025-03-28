@@ -1,0 +1,252 @@
+/* ========== Wash Page Modern Theme ========== */
+
+.wash-page {
+  font-family: 'Segoe UI', 'Noto Sans Thai', 'Roboto', sans-serif;
+  background-color: #f4f7fa; /* สีฟ้าอ่อน */
+  color: #2d2d2d;
+  min-height: 100vh;
+  padding: 5rem; /* เพิ่ม padding เพื่อไม่ให้เนื้อหาชิดขอบ */
+  padding-bottom: 80px; /* เพิ่มระยะระหว่าง footer */
+}
+
+.wash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 1rem; /* เพิ่มระยะห่างระหว่าง header กับเนื้อหา */
+}
+
+.wash-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e3a59; /* สีฟ้าหม่น */
+  margin: 0;
+}
+
+.wash-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#searchWash {
+  padding: 10px 16px;
+  border: 1px solid #b0bec5;
+  border-radius: 10px;
+  min-width: 300px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.3s ease;
+}
+
+#searchWash:focus {
+  outline: none;
+  border-color: #78909c;
+}
+
+#addWashBtn {
+  background-color: #3a6ea5; /* สีน้ำเงินมาตรฐาน */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#addWashBtn::before {
+  content: '+'; 
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#addWashBtn:hover {
+  background-color: #2c5985; /* ฟ้าลึกกว่าเมื่อ hover */
+}
+
+/* ========== Table Styling ========== */
+.wash-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+  margin: 1.5rem 0 0.5rem; /* เพิ่มระยะห่างระหว่าง table กับส่วนอื่น */
+}
+
+.wash-table thead {
+  background-color: #3a6ea5; /* สีฟ้า */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wash-table th, .wash-table td {
+  padding: 14px 10px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+.wash-table th:last-child, .wash-table td:last-child {
+  border-right: none;
+}
+
+.wash-table th::after {
+  content: attr(data-label);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: #cfd8dc;
+  margin-top: 4px;
+}
+
+.wash-table tbody tr:hover {
+  background-color: #eaf0f4;
+}
+
+/* ========== Status Badge ========== */
+.status {
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status.waiting-send-wash {
+  background-color: #ffb74d; /* สีส้ม */
+}
+
+.status.washing {
+  background-color: #4fc3f7; /* ฟ้าอ่อน */
+}
+
+.status.completed {
+  background-color: #81c784; /* สีเขียว */
+}
+
+/* ========== Modal ========== */
+.modal {
+  display: none; /* ซ่อนไว้เมื่อไม่ได้เปิด */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* ให้ modal อยู่ด้านบนสุด */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #37474f;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #455a64;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 0.95rem;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #90a4ae;
+  outline: none;
+}
+
+.modal-content button[type="submit"] {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  background-color: #3a6ea5; /* ฟ้าสด */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #2c5985; /* ฟ้าลึก */
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #555;
+}
+
+/* ========== Confirm Delete Buttons ========== */
+.modal-content .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-content .danger {
+  background-color: #ef5350; /* สีแดง */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.modal-content .danger:hover {
+  background-color: #d32f2f; /* สีแดงเข้ม */
+}

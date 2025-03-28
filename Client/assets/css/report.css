@@ -1,0 +1,77 @@
+/* -------- Report Page Layout -------- */
+.report-page {
+    padding: 20px;
+    background-color: #f4f7fa;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .report-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .report-header h2 {
+    flex: 1;
+    margin: 0;
+    color: #2f4f6f;
+  }
+  
+  .report-filters label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: #3a6ea5;
+  }
+  
+  .report-filters input[type="date"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  
+  .report-filters button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #3a6ea5;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .report-filters button:hover {
+    background-color: #2c5985;
+  }
+  
+  .report-table {
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  
+  #reportTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  
+  #reportTable thead {
+    background-color: #3a6ea5;
+    color: white;
+  }
+  
+  #reportTable th, #reportTable td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  #reportTable tbody tr:hover {
+    background-color: #f0f4f8;
+  }
+  
