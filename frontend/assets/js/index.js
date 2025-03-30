@@ -17,7 +17,7 @@ function loadPage(pageName) {
     <div class="loading-bar"><div class="bar"></div></div>
   `;
 
-  fetch(`pages/${pageName}.html`)
+  fetch(`/RD-Wash-01/frontend/pages/${pageName}.html`)
     .then((res) => {
       if (!res.ok) throw new Error('ไม่สามารถโหลดหน้าได้');
       return res.text();

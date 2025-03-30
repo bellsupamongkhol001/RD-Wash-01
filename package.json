@@ -1,11 +1,10 @@
 {
-  "name": "server",
+  "name": "rd-wash-fullstack",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "RD Wash System Fullstack App",
+  "main": "../RD-Wash-01/backend/server.js",
   "scripts": {
-    "start": "node Server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js"
   },
   "keywords": [],
   "author": "",

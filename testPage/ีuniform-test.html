@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uniform Management</title>
+  <link rel="stylesheet" href="./css/uni.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 🔷 HEADER -->
+  <header class="header">
+    <h2><i class="fas fa-tshirt"></i> Uniform Management</h2>
+    <div class="header-controls">
+      <input type="text" id="searchUniform" placeholder="🔎 Search Uniform Code / Color" />
+      <button class="btn" onclick="openUniformForm()">➕ Add</button>
+      <button class="btn" onclick="loadUniformMock()">📦 Mock</button>
+    </div>
+  </header>
+
+  <!-- 🔷 UNIFORM DISPLAY -->
+  <main>
+    <section class="uniform-section">
+      <h3><i class="fas fa-list"></i> รายการยูนิฟอร์มทั้งหมด</h3>
+      <div class="uniform-container" id="uniformContainer">
+        <!-- Cards Loaded by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 🔷 UNIFORM MODAL -->
+  <div class="modal" id="uniformModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeUniformForm()">&times;</span>
+      <h3 id="modalTitle">Add Uniform</h3>
+      <input type="hidden" id="editUniformIndex">
+      <label>UniformID</label>
+      <input type="text" id="uniformCode" required>
+      <label>UniformSize</label>
+      <input type="text" id="uniformSize" required>
+      <label>UniformColor</label>
+      <select id="uniformColor" required>
+        <option value="Green">Green</option>
+        <option value="Yellow">Yellow</option>
+        <option value="White">White</option>
+      <label>Quantity</label>
+      <input type="number" id="uniformQty" min="1" required>
+      <button onclick="saveUniform()">💾 Save</button>
+    </div>
+  </div>
+
+  <!-- 🔷 FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 RD Wash System - Uniform Module</p>
+  </footer>
+
+  <!-- 🔷 JS -->
+  <script src="./js/uni.js"></script>
+</body>
+</html>

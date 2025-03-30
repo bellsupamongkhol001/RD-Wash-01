@@ -3,19 +3,19 @@ services:
     name: rd-wash-backend
     env: node
     plan: free
-    buildCommand: cd Server && npm install
+    buildCommand: cd backend && npm install
     startCommand: node server.js
     envVars:
       - key: MONGODB_URI
         value: MONGODB_URI=mongodb+srv://bellsupamongkhol:123456n1ZA@rd-wash.fbkvkxr.mongodb.net/rdwash?retryWrites=true&w=majority&appName=RD-WASH
     repo: https://github.com/bellsupamongkhol001/RD-Wash-01
     branch: main
-    rootDir: Server
+    rootDir: backend
 
   - type: static
     name: rd-wash-frontend
     repo: https://github.com/bellsupamongkhol001/RD-Wash-01
     branch: main
-    rootDir: Client
+    rootDir: frontend
     buildCommand: ""  # ไม่มี build
-    staticPublishPath: Client
+    staticPublishPath: frontend
