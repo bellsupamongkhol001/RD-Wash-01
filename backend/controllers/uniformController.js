@@ -27,4 +27,6 @@ const addUniform = async (req, res) => {
   }
 };
 
+const editUniform = async ()
+
 module.exports = { getAllUniforms, addUniform };

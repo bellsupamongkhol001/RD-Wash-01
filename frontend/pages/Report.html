@@ -34,10 +34,10 @@
   </div>
 </div>
 
-<link rel="stylesheet" href="/RD-Wash-01/Client/assets/css/report.css">
+<link rel="stylesheet" href="../assets/css/report.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-<script type="module">
+<script type="module" src="../assets/js/report.js">
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('filterBtn').addEventListener('click', loadReport);
     document.getElementById('exportCsvBtn').addEventListener('click', exportCSV);
